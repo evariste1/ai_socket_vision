@@ -182,7 +182,7 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     #prediction = learn.predict(img)[0]
-    preds, idx, output = learn.predict(img)[0]
+    preds, idx, output = learn.predict(img)
     d = dict({learn.data.classes[i]: round(to_np(p)*100,2) for i, p in enumerate(output) if p > 0.2})
     return JSONResponse({'result': str(d)})
 
