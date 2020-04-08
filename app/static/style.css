@@ -1,14 +1,29 @@
+
+.style1 {color: #0099FF}
+.style2 {
+	color: #406198;
+	font-weight: bold;
+	font-style: italic;
+	font-size:24px;
+}
+.style3 {color: #406198}
+body {
+	background-color: #BEBEBE;
+	font:Arial, Helvetica, sans-serif;
+}
+
+/*
 body {
     background-color: #fff;
 }
-
+*/
 .no-display {
     display: none;
 }
 
 .center {
     margin: auto;
-    padding: 10px 50px;
+    padding: 10px ;
     text-align: center;
     font-size: 14px;
 }
@@ -21,11 +36,11 @@ body {
 }
 
 .content {
-    margin-top: 10em;
+    margin-top: 10px;
 }
 
 .analyze {
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
 .upload-label {
@@ -36,7 +51,7 @@ body {
 .result-label {
     margin-top: 0.5em;
     padding: 10px;
-    font-size: 13px;
+    font-size: 30px;
 }
 
 button.choose-file-button {
