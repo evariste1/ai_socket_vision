@@ -1,30 +1,113 @@
-<html lang='en'>
+
+<html>
+
 <head>
-  <meta charset='utf-8'>
+
+<link rel="shortcut icon" href="../static/icon.png" />
+<title>Medics image inference socket</title>
+
   <link rel='stylesheet' href='../static/style.css'>
+   <link rel='stylesheet' href='../static/style_posting.css'>
+  <link rel='stylesheet' href='../static/style_messages.css'>
   <script src='../static/client.js'></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
 </head>
-<body>
-<div>
-  <div class='center'>
-    <div class='title'> <strong>MEDICS IMAGE INFERENCE</strong></div>
-    <p>
-       <strong>MEDICS IMAGE INFERENCE- Inference of medical images to support medical diagnostics</strong>
-    </p>
-	<p>
-      This APP was originally  trained on  <strong>A total of 6189    of  Chest X-ray images (anterior-posterior) for Normal, Viral and Bacterial Infected and COVID-19 infected individuals. </strong><strong> 
-	Average  accuracy of 97%, Precision (95%) and recall(97%) for COVID-19 validation X-Ray images.</strong>
-    </p>
-	<p>
-      Upload a high quality  pulmonary X-Ray image for inference
-    </p>
-	<p>
-      <strong>AI-SOCKET Development team</strong> 
-    </p>
-	
-	
-	
-    <div class='content'>
+
+<body >
+<table width="100%" border="0" >
+  <tr>
+    <td><div align="center">
+      <table width="80%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+          <td height="10" colspan="5"></td>
+        </tr>
+        <tr>
+          <td width="1%">&nbsp;</td>
+          <td height="97px" colspan="3" align="center" valign="middle" background="../static/images/header-bg.png"><table width="100%" border="0">
+            <tr>
+              <td bgcolor="#0099FF" height="5px"></td>
+            </tr>
+            <tr>
+              <td align="center"><table width="100%" border="0">
+                <tr>
+                  <td width="15%" align="center"><img src="../static/logo.png" width="142" height="87"></td>
+                  <td width="70%" align="center"><p align="center" class="style2">MEDICS IMAGE INFERENCE  SOCKET</p>
+                    <span class="style3"><strong><em>Inference of medical  images to support medical diagnostics</em></strong></span></td>
+                  <td width="15%" align="center"><p>&nbsp;</p>
+                    <p>&nbsp;</p></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td bgcolor="#0099FF" height="5px"></td>
+            </tr>
+          </table></td>
+          <td width="1%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3" align="center" valign="top"><table width="80%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="100%" height="10px"></td>
+              </tr>
+            <tr>
+              <td align="center"><strong>COVID-19 Chest X-ray Image Inference  AI model</strong></td>
+              </tr>
+            <tr>
+              <td height="10px"></td>
+            </tr>
+            <tr>
+              <td height="20px" align="center"><table width="80%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000" style="font:Arial; border:thin; border-color:#000000">
+                <tr bordercolor="#000000">
+                  <td width="20%" valign="top"><p>Model Structure:</p></td>
+                  <td width="47%" valign="top"><p>RCNN</p></td>
+                  <td width="12%" valign="top"><p>Accuracy:</p></td>
+                  <td width="21%" valign="top"><p>85%</p></td>
+                </tr>
+                <tr bordercolor="#000000">
+                  <td valign="top"><p>Training :</p></td>
+                  <td valign="top"><p>6,000 Images</p></td>
+                  <td valign="top"><p>Specificity:</p></td>
+                  <td valign="top"><p>90%</p></td>
+                </tr>
+                <tr bordercolor="#000000">
+                  <td valign="top"><p>Validation :</p></td>
+                  <td valign="top"><p>2,000 images</p></td>
+                  <td valign="top"><p>Recall:</p></td>
+                  <td valign="top"><p>90%</p></td>
+                </tr>
+                <tr bordercolor="#000000">
+                  <td colspan="2" valign="top"><p><a href="Deployed%20Machine%20Learning%20Model%20%20for%20COVID.docx"><em>To contribute please &nbsp;click here</em></a></p></td>
+                  <td valign="top"><p>F-value:</p></td>
+                  <td valign="top"><p>90%</p></td>
+                </tr>
+                
+              </table></td>
+              </tr>
+
+            
+            <tr>
+              <td height="15px"></td>
+              </tr>
+          </table></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="65" rowspan="5">&nbsp;</td>
+          <td colspan="3" align="left" valign="top" ><table width="100%" >
+            <tr>
+              <td width="49%"><table width="100%" border="0">
+                <tr>
+                  <td><fieldset>
+                    <legend><span class="style1 style3" style="text-transform:uppercase">Upload your medical image for inference</span></legend>
+                    <table width="100%" border="0">
+                      
+                      <tr>
+                        <td align="center">&nbsp;
+                          <div class='content'>
       <div class='no-display'>
         <input id='file-input'
                class='no-display'
@@ -38,16 +121,78 @@
         <label id='upload-label'>No file chosen</label>
       </div>
       <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
+        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>      </div>
       <div class='analyze'>
         <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div><strong>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div></strong>
-    </div>
-  </div>
-</div>
+      </div>
+      </div></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    
+                  </fieldset></td>
+                </tr>
+              </table></td>
+              <td width="2%">&nbsp;</td>
+              <td width="49%" align="center" valign="middle" background="../static/covid-19-confirmed-cases.png"><table width="100%" border="0">
+                <tr>
+                  <td><fieldset>
+                    <legend><span class="style1 style3" style="text-transform:uppercase">Prediction and % confidence level</span></legend>
+                    <h1 align="center">
+					 <div class='result-label'>
+						<label id='result-label'>result is here</label>
+					  </div>
+					  </h1> 
+                    </fieldset></td>
+                  </tr>
+                </table>                </td>
+              </tr>
+          </table>          </td>
+          <td rowspan="5">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="3" align="left" valign="top"  style="font:Arial, Helvetica, sans-serif" ><p>You can  improve this model by providing more valid images for the model to learn from.  Click <a href="Deployed%20Machine%20Learning%20Model%20%20for%20COVID.docx">here</a> to contribute.</p></td>
+        </tr>
+        <tr>
+          <td colspan="3" align="left" valign="top" >&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="3" align="left" valign="top" >
+
+
+</td>
+        </tr>
+        <tr>
+          <td colspan="3" align="left" valign="top" >&nbsp;
+</td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td width="10%" align="left" valign="baseline" >&nbsp;</td>
+          <td width="78%" >&nbsp;</td>
+          <td width="10%" align="right" valign="bottom" >&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="style1 style3" height="75px" colspan="5" align="center" valign="middle" bgcolor="#666666"><span style="color:#FFF">Copyright &copy; 2020 - <script> 
+  // Creating Date Object 
+  var dateobj = new Date(); 
+  
+  // year from above object 
+  // is being fetched using getFullYear(). 
+  var B = dateobj.getFullYear(); 
+    
+  // Printing current year 
+  document.write(B); 
+</script> AI Socket  www.ai_socket.com</span></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<p></p>
 </body>
+
 </html>
