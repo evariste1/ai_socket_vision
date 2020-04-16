@@ -63,6 +63,9 @@ async def analyze(request):
     #prediction = learn.predict(img)[0]
     preds, idx, output = learn.predict(img)
     d = dict({learn.data.classes[i]: round(to_np(p)*100,2) for i, p in enumerate(output) if p > 0.2})
+    
+    #pie chart code-start
+    import matplotlib.pyplot as plt
     keys = d.keys()
     values = d.values()
     color_list=[]
@@ -74,6 +77,7 @@ async def analyze(request):
     plt.title('Diagnosis')
     plt.axis('equal')
     plt.show()
+    #pie chart code -end
     
     return JSONResponse({'result': str(d)})
 
