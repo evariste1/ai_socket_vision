@@ -81,7 +81,7 @@ async def analyze(request):
     plt.show()
     #pie chart code -end
     
-    return JSONResponse({'result': str(d)})
+    return JSONResponse({'result': outcome})
 
 
 if __name__ == '__main__':
