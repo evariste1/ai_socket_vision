@@ -63,6 +63,8 @@ async def analyze(request):
     #prediction = learn.predict(img)[0]
     preds, idx, output = learn.predict(img)
     d = dict({learn.data.classes[i]: round(to_np(p)*100,2) for i, p in enumerate(output) if p > 0.2})
+    outcome=str(d)
+    outcome=outcome.strip('{}\'')
     
     #pie chart code-start
     import matplotlib.pyplot as plt
