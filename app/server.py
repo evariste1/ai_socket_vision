@@ -63,6 +63,19 @@ async def analyze(request):
     #prediction = learn.predict(img)[0]
     preds, idx, output = learn.predict(img)
     d = dict({learn.data.classes[i]: round(to_np(p)*100,2) for i, p in enumerate(output) if p > 0.2})
+    
+    keys = d.keys()
+   values = d.values()
+   color_list=[]
+   color_dict={'NOT CERTAIN':'mistryrose','COVID-19 INFECTION':'lightcoral','PNEUMONIA INFECTION':'khaki','NO INFECTION':'lime'}
+   for key in d:
+     new_color=color_dict[key]
+     color_list.append(new_color)
+   plt.pie(values,labels=keys, colors=color_list, startangle=90, shadow=True, autopct='%1.2f%%')
+   plt.title('Diagnosis')
+   plt.axis('equal')
+   plt.show()
+    
     return JSONResponse({'result': str(d)})
 
 
