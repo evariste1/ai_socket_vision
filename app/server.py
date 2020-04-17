@@ -71,7 +71,7 @@ async def analyze(request):
     keys = d.keys()
     values = d.values()
     color_list=[]
-    color_dict={'NOT CERTAIN':'rose','COVID-19 INFECTION':'lightcoral','PNEUMONIA INFECTION':'khaki','NO INFECTION':'lime'}
+    color_dict={'NOT CERTAIN':'red','COVID-19 INFECTION':'lightcoral','PNEUMONIA INFECTION':'khaki','NO INFECTION':'lime'}
     for key in d:
         new_color=color_dict[key]
         color_list.append(new_color)
