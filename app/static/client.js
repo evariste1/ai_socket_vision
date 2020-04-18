@@ -1,4 +1,4 @@
-
+/*
 window.onload = function() {
 
 var dataPoints = [];
@@ -31,7 +31,7 @@ chart.render();
 
 }  
 
-
+*/
 
 
 var el = x => document.getElementById(x);
@@ -66,7 +66,8 @@ function analyze() {
 	  
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Diagnosis & Confidence Level(%)= ${response["result"]}`;
+	    alert(JSON.stringify(response));
+     // el("result-label").innerHTML = `Diagnosis & Confidence Level(%)= ${response["result"]}`;
 	  
 	  //new code for pie chart
 	  
@@ -78,6 +79,7 @@ function analyze() {
 					label: x 
 				});
 		  }
+	    alert(JSON.stringify(dataPoints));
 		// creating the pie chart to be displayed in chartContainer div using the data cretaed in datapoint above
 		var chart = new CanvasJS.Chart("chartContainer", {
 			animationEnabled: true,
