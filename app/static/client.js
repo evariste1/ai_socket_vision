@@ -1,3 +1,39 @@
+/* 
+window.onload = function() {
+
+var dataPoints = [];
+var myObj, x;
+myObj = {"Not certain":"60", "COVID-19":"30", "Pneumonia":"20"};//replace with jsondata
+for (x in myObj) {
+dataPoints.push({
+			y: parseFloat(myObj[x]),
+			label: x 
+		});
+  }
+
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Prediction"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: dataPoints
+	}]
+});
+chart.render();
+
+
+
+}  
+*/
+
+
+
 var el = x => document.getElementById(x);
 
 function showPicker() {
@@ -27,9 +63,44 @@ function analyze() {
     alert(xhr.responseText);
   };
   xhr.onload = function(e) {
+	  
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Diagnosis & Confidence Level(%)= ${response["result"]}`;
+	  
+	  //new code for pie chart
+	  
+		var dataPoints = [];
+		var x;
+		for (x in response) {
+		dataPoints.push({
+					y: parseFloat(response[x]),
+					label: x 
+				});
+		  }
+		// creating the pie chart to be displayed in chartContainer div using the data cretaed in datapoint above
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			title: {
+				text: "Prediction"
+			},
+			data: [{
+				type: "pie",
+				startAngle: 240,
+				yValueFormatString: "##0.00\"%\"",
+				indexLabel: "{label} {y}",
+				dataPoints: dataPoints
+			}]
+		});
+		chart.render();
+
+	  
+	  //end of pie chart
+	  
+	  
+	  
+	  
+	  
     }
     el("analyze-button").innerHTML = "Analyze";
   };
@@ -38,4 +109,5 @@ function analyze() {
   fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
 }
+
 
