@@ -1,39 +1,3 @@
-/*
-window.onload = function() {
-
-var dataPoints = [];
-var myObj, x;
-myObj = {"Not certain":"60", "COVID-19":"30", "Pneumonia":"20"};//replace with jsondata
-for (x in myObj) {
-dataPoints.push({
-			y: parseFloat(myObj[x]),
-			label: x 
-		});
-  }
-
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title: {
-		text: "Prediction"
-	},
-	data: [{
-		type: "pie",
-		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
-		indexLabel: "{label} {y}",
-		dataPoints: dataPoints
-	}]
-});
-chart.render();
-
-
-
-}  
-
-*/
-
-
 var el = x => document.getElementById(x);
 
 function showPicker() {
@@ -66,7 +30,7 @@ function analyze() {
 	  
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-	    alert(JSON.stringify(response));
+	    //alert(JSON.stringify(response));
      // el("result-label").innerHTML = `Diagnosis & Confidence Level(%)= ${response["result"]}`;
 	  
 	  //new code for pie chart
@@ -79,7 +43,7 @@ function analyze() {
 					label: x 
 				});
 		  }
-	    alert(JSON.stringify(dataPoints));
+	    //alert(JSON.stringify(dataPoints));
 		// creating the pie chart to be displayed in chartContainer div using the data cretaed in datapoint above
 		var chart = new CanvasJS.Chart("chartContainer", {
 			animationEnabled: true,
