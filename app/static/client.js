@@ -1,4 +1,4 @@
-/* 
+
 window.onload = function() {
 
 var dataPoints = [];
@@ -30,7 +30,7 @@ chart.render();
 
 
 }  
-*/
+
 
 
 
