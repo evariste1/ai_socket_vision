@@ -22,6 +22,10 @@ body {
 
 }
 
+a:hover {
+  color: #0000FF;
+}
+
 /*
 body {
     background-color: #fff;
@@ -115,7 +119,7 @@ table.rcorners_upload {
   /* #73AD21; */
   padding: 5px;
   width: 90%;
-  height: 370px;
+  height: 400px;
  
 }
 
